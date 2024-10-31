@@ -1,14 +1,12 @@
 <template>
   <div class="hom-page">
-    <h2>AI Powered Robotic Arm</h2>
+    <h2>
+Ciro: The AI-Powered Robotic Arm
+</h2>
     <div class="caption">
       <p>
-        This project showcases an AI-powered robotic arm that listens to voice
-        commands and executes tasks. It's a hands-on demonstration of my work in
-        robotics and artificial intelligence. Follow along as I develop and
-        improve this innovative technology!
 
-        <br>       <br>One of the goals of this project is to have a buddy with whom I can play physical chess and communicate.
+Welcome to Ciro's development journey! Ciro is an intelligent robotic arm designed to recognize objects, respond to voice commands, and perform tasks with precision. This project combines robotics with AI for an exciting hands-on exploration into machine intelligence. Follow along as Ciro grows in capability and skill.       <br>       <br>One of the goals of this project is to have a buddy with whom I can play physical chess and communicate.
 
 
       </p>
