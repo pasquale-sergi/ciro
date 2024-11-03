@@ -22,6 +22,14 @@ Welcome to Ciro's development journey! Ciro is an intelligent robotic arm design
     <div class="robot-specs">
       <robot-specs></robot-specs>
     </div>
+    <div class="about-me">
+      <h3>About Me</h3>
+      <p>
+        Hi! I'm a Computer and Electrical Engineering student. I love to program and build things. After spending most of my time developing web applications, I was curious to create something physical. I'm also new to the world of machine learning and eager to test its potential. This project gives me the chance to combine everything and challenge myself. 
+        <br><br>
+        If you have any suggestions, feel free to reach out to me at <a href="mailto:[email]">pasquale.s3rgi@gmail.com</a> or check my GitHub: <a href="https://www.github.com/pasquale-sergi">pasquale-sergi</a>.
+      </p>
+    </div>
   </div>
 </template>
 
@@ -44,7 +52,7 @@ h2 {
 }
 
 .caption {
-  width: 60%;
+  width: 50%;
   text-align: center;
   margin: 0 auto;
 }
@@ -55,5 +63,11 @@ h2 {
 
 .robot-specs {
   margin-top: 20px;
+}
+.about-me {
+  border-top:1px dashed black;
+  width: 50%;
+  text-align: center;
+  margin: 20px auto;
 }
 </style>

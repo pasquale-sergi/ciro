@@ -111,7 +111,7 @@ export default {
 }
 .ai-features {
   border-top: 1px dashed black;
-  max-width: 800px;
+  max-width: 50%;
   margin: 20px auto;
   padding: 20px;
   font-family: Arial, sans-serif;
@@ -159,7 +159,7 @@ p {
 
 .hardware-specs {
   border-top: 1px dashed black;
-  max-width: 800px;
+  max-width: 50%;
   margin: 20px auto;
   padding: 20px;
   font-family: Arial, sans-serif;

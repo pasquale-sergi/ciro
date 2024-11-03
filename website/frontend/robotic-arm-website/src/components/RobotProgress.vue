@@ -76,7 +76,7 @@ export default {
 }
 
 .progress-page {
-  max-width: 800px;
+  max-width: 50%;
   margin: 0 auto;
   padding: 20px;
   font-family: Arial, sans-serif;

@@ -62,7 +62,7 @@ export default {
 }
 
 .ai-updates{
-  max-width:800px;
+  max-width:50%;
   margin: 0 auto;
   padding:20px;
   font-family:Arail, sans-serif;

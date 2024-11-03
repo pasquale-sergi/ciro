@@ -165,6 +165,45 @@ Link to the model:    <a class="model-link" href="https://grabcad.com/library/6-
     
     It actually looks fine and is compatible with NEMA 17 motors, which are the steppers I plan to use, even though I have some servos planned as well. That's why I mentioned I will adapt it—hopefully without much trouble.`,
             tag: "printing"
+        },
+        {
+            title: "Update 8: Hands on the Object Detection Model",
+            content: `I'm starting to work on the object detection model. The initial plan was to train the arm to recognize 3-5 different objects and, through voice commands, have it perform specific actions with them. However, since I haven’t yet thought of a practical task beyond "grab and move," I’ve decided to jump straight to working with chess pieces. As I mentioned earlier, I want this arm to eventually play physical chess against me.<br><br>
+
+That said, I’m still brainstorming for a more dynamic task that could utilize voice commands, as chess isn’t the most effective way to showcase a speech-to-text model—it’s generally a pretty quiet game.<br><br>As always, I like to begin with the data, and this time it’s taking a significant amount of time, especially since I need to label the images.
+
+<br>My Raspberry Pi with the camera is already set up, so I just need a simple Python script to start taking pictures. I’ll start with the rook piece; the plan is to collect around 300 samples, with 80% from my own setup—my chessboard, environment, and lighting—and the rest sourced from the internet, if easily available.
+
+<br><br>It sounds pretty simple and straightforward, and it is. I’ll post a quick video of the setup below.<br><br>
+
+<div> <video controls> <source src="/camera-setup.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div>
+<br><br>The script simply prompts the user to press "Enter" to take a photo or "q" to exit.
+
+<br><br>I know the camera would be much more flexible with a longer ribbon cable. But, as I mentioned in a recent update, it was tough to even find this one, so let’s just say I tried! As a good procrastinator, I’ll revisit this issue when I eventually work on the robot’s physical build, which will definitely require a much longer cable.
+<br> Will I regret it? Sure. Am I still going to ignore it? Of course.
+
+<br><br>
+After taking about 70 pictures, I realized three things: my life kind of sucks, I still have 11 more pieces to go (since I actually need to track the color for it to play against me), and labeling all these photos is going to be a real pain. So, the plan is to split the folder 50/50 between each color—black and white in my case.
+
+Later, I'll label each photo as either white_rook or black_rook while keeping the image name neutral, like rook_{i}.
+
+<p>Nice! So now I have around 200 pictures of rooks. I tried to change the point of view as much as possible, with some rooks on the table, some on the board, and others with different pieces. About 25% of the images feature both rooks in a single shot, with varying heights, angles, lighting, and so on. I’m going to pause for now and focus on the model itself; after all, with such a small dataset, I can always integrate more pictures and retrain based on the results.</p>
+
+<p>I installed labelImg, which seems to be one of the best tools for this task, and I’ve labeled all the pictures. Unfortunately, I didn’t find any valuable datasets online. I admit I didn’t look too hard because I worry that too much environmental variation could negatively impact the model. I might be mistaken, but I plan to use data augmentation, so I hope my environment will be sufficient. If not, I’ll completely change the room and lighting and take many more pictures.</p>
+
+<p>So now we have our folder of labeled rook images ready to feed into our model. My idea is to test a model using just this one piece to understand how much variance we still need—too many pictures? Too few? Too static with the background? I want to determine the best environment for taking pictures before I commit to snapping 3,000 of them and potentially going off track.</p>
+
+<p>Now, here’s my question: Should I build a model that simply classifies whether it’s a rook and what color it is? Or should I go for a model that recognizes all 12 different pieces? My concern with the latter option is that the model might overfit, since it would be designed to classify 12 different classes but may only learn the features of the rook. On the other hand, the first model seems somewhat limited, as it would only classify whether a piece is a rook or not, leaving no room for the other pieces when I eventually add them. This means I’d likely need to rewrite the entire model, which defeats the purpose of starting with a simple classification.</p>
+
+<p>So, I’m at a crossroads where I need to think carefully about whether to gather all the data now and then build the model or to continue with the current approach. In the meantime, I’ve run out of free time, so I’ll use tonight to make a decision.</p>
+
+
+
+
+
+
+`,
+            tag: "ai"
         }
         ],
 

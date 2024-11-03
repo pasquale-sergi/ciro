@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="hardware-updates">
     <h2>Hardware Updates</h2>
     <div class="links">
       <router-link to="/progress">All Progress</router-link>
@@ -31,8 +31,8 @@ export default {
   display:flex;
   justify-content:space-between;
 }
-.container{
- max-width:800px;
+.hardware-updates{
+  max-width:50%;
   margin: 0 auto;
   padding:20px;
   font-family: Arial, sans-serif;
