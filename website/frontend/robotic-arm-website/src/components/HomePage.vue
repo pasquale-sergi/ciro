@@ -52,7 +52,8 @@ h2 {
 }
 
 .caption {
-  width: 50%;
+  max-width:800px;
+  width: 90%;
   text-align: center;
   margin: 0 auto;
 }
@@ -66,8 +67,21 @@ h2 {
 }
 .about-me {
   border-top:1px dashed black;
-  width: 50%;
+  width: 55%;
   text-align: center;
   margin: 20px auto;
+}
+@media (max-width: 768px) {
+  .caption,
+  .about-me {
+    width: 90%;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  .home-page,
+  .progress-link {
+    text-align: center;
+  }
 }
 </style>

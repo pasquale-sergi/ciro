@@ -58,8 +58,15 @@ export default {
   margin:10px 0;
   margin-top:20px;
 }
+@media(max-width:760px){
 
-
-/* Your styles */
+  .printing-updates,
+  .links,
+  .update-content{
+    max-width:90%;
+    text-align:center;
+    margin:0 auto;
+  }
+}
 </style>
 

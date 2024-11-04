@@ -32,7 +32,8 @@ export default {
   justify-content:space-between;
 }
 .hardware-updates{
-  max-width:50%;
+  max-width:800px;
+  width:90%;
   margin: 0 auto;
   padding:20px;
   font-family: Arial, sans-serif;
@@ -57,4 +58,13 @@ export default {
   margin-top:20px;
 }
 
+@media(max-width:768px){
+  .hardware-updates,
+  .links,
+  .update-content{
+    max-width:90%;
+    text-align:center;
+    margin:0 auto;
+  }
+}
 </style>

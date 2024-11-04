@@ -47,6 +47,7 @@ export default {
 }
 .container{
  max-width:800px;
+  width:90%;
   margin: 0 auto;
   padding:20px;
   font-family: Arial, sans-serif;
@@ -62,11 +63,19 @@ export default {
 }
 
 .ai-updates{
-  max-width:50%;
+  max-width:800px;
+  width:90%;
   margin: 0 auto;
   padding:20px;
   font-family:Arail, sans-serif;
 }
-
+@media(max-width:768px){
+  .ai-updates,
+  .links,
+  .update-content{
+    max-width:90%;
+    text-align:center;
+  }
+}
 
 </style>

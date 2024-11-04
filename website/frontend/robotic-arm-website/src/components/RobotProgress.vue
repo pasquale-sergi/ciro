@@ -63,20 +63,21 @@ export default {
 
 .update div.sold-img {
   display: flex;
-  justify-content: center; /* Center the image */
+  justify-content: center;
   align-items: center;
-  margin-top: 20px; /* Add some spacing above */
+  margin-top: 20px;
 }
 
 .update img.soldering-img {
-  max-width: 100%; /* Adjust this if you want it smaller */
-  height: 300px; /* Maintain aspect ratio */
-  border: 2px solid #ccc; /* Optional: add a border */
-  border-radius: 8px; /* Optional: round corners */
+  max-width: 100%; 
+  height: 300px; 
+  border: 2px solid #ccc;
+  border-radius: 8px; 
 }
 
 .progress-page {
-  max-width: 50%;
+  max-width: 800px;
+  width:90%;
   margin: 0 auto;
   padding: 20px;
   font-family: Arial, sans-serif;
@@ -143,6 +144,16 @@ video {
 .home-link{
   display:flex;
   justify-content:center;
+}
+
+@media(max-width:768px){
+  .caption,
+  .progress-page,
+  .updates{
+    max-width:90%;
+    text-align:center;
+    margin:0 auto;
+  }
 }
 </style>
   

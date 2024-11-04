@@ -164,4 +164,20 @@ p {
   padding: 20px;
   font-family: Arial, sans-serif;
 }
+@media (max-width: 768px) {
+  .caption,
+  .hardware-specs,
+  .ai-features
+ {
+     max-width: 90%;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  .hardware-specs,
+  .ai-features,
+  .progress-link {
+    text-align: center;
+  }
+}
 </style>
