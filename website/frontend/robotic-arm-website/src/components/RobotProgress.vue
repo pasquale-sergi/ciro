@@ -155,5 +155,14 @@ video {
     margin:0 auto;
   }
 }
+  .progress-links {
+    flex-direction: column; /* Change to vertical layout */
+    align-items: center; /* Center the items */
+    padding: 12px;
+  }
+
+  .progress-links a {
+    margin: 5px 0; /* Add vertical spacing between links */
+  }
 </style>
   

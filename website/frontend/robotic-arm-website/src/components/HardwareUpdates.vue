@@ -67,4 +67,13 @@ export default {
     margin:0 auto;
   }
 }
+  .links {
+    flex-direction: column; /* Change to vertical layout */
+    align-items: center; /* Center the items */
+    padding: 12px;
+  }
+
+  .links a {
+    margin: 5px 0; /* Add vertical spacing between links */
+  }
 </style>

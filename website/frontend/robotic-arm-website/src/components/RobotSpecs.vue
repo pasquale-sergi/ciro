@@ -118,7 +118,7 @@ export default {
 }
 
 h3 {
-  color: black; /* Dark heading color */
+  color: black; 
   font-weight: bold;
   text-align: center;
   margin-bottom: 15px;
@@ -127,34 +127,34 @@ h3 {
 .caption {
   font-style: italic;
   color: #666;
-  text-align: center; /* Center caption */
+  text-align: center;
   margin-bottom: 20px;
 }
 
 ul {
-  list-style-type: none; /* Remove default bullets */
+  list-style-type: none;
   padding-left: 0;
 }
 
 ul li {
-  margin-bottom: 15px; /* Increased spacing between items */
+  margin-bottom: 15px; 
   padding: 15px;
-  border: 1px solid #ccc; /* Light border for items */
-  border-radius: 5px; /* Rounded corners for items */
-  transition: transform 0.2s, box-shadow 0.2s; /* Animation effects */
+  border: 1px solid #ccc;
+  border-radius: 5px; 
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 ul li:hover {
-  transform: translateY(-2px); /* Slight lift effect on hover */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  transform: translateY(-2px); 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 strong {
-  color: black; /* Keep strong text color black */
+  color: black; 
 }
 
 p {
-  margin: 5px 0; /* Maintain consistent margin for paragraphs */
+  margin: 5px 0; 
 }
 
 .hardware-specs {
@@ -170,13 +170,13 @@ p {
   .ai-features
  {
      max-width: 90%;
+    text-align:center;
   }
   h2 {
     font-size: 1.5em;
   }
-  .hardware-specs,
-  .ai-features,
-  .progress-link {
+  .caption {
+    padding: 0 20px; 
     text-align: center;
   }
 }

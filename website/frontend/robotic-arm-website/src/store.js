@@ -176,7 +176,7 @@ That said, I’m still brainstorming for a more dynamic task that could utilize 
 
 <br><br>It sounds pretty simple and straightforward, and it is. I’ll post a quick video of the setup below.<br><br>
 
-<div> <video controls> <source src="/camera-setup.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div>
+<div> <video controls> <source src="/compr-camera-setup.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div>
 <br><br>The script simply prompts the user to press "Enter" to take a photo or "q" to exit.
 
 <br><br>I know the camera would be much more flexible with a longer ribbon cable. But, as I mentioned in a recent update, it was tough to even find this one, so let’s just say I tried! As a good procrastinator, I’ll revisit this issue when I eventually work on the robot’s physical build, which will definitely require a much longer cable.

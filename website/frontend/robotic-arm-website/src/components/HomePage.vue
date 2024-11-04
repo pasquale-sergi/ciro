@@ -1,5 +1,5 @@
 <template>
-  <div class="hom-page">
+  <div class="home-page">
     <h2>
 Ciro: The AI-Powered Robotic Arm
 </h2>
@@ -66,8 +66,9 @@ h2 {
   margin-top: 20px;
 }
 .about-me {
-  border-top:1px dashed black;
-  width: 55%;
+  border-top: 1px dashed black;
+  max-width:800px;
+  width: 90%;
   text-align: center;
   margin: 20px auto;
 }

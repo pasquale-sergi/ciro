@@ -46,7 +46,8 @@ export default {
   justify-content:space-between;
 }
 .printing-updates{
- max-width:50%;
+ max-width:800px;
+  width:90%;
   margin: 0 auto;
   padding:20px;
   font-family: Arial, sans-serif;
@@ -68,5 +69,17 @@ export default {
     margin:0 auto;
   }
 }
+  .update-content{
+  margin-top:20px;
+}
+  .links {
+    flex-direction: column; /* Change to vertical layout */
+    align-items: center; /* Center the items */
+    padding: 12px;
+  }
+
+  .links a {
+    margin: 5px 0; /* Add vertical spacing between links */
+  }
 </style>
 

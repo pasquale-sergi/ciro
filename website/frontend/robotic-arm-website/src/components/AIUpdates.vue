@@ -41,7 +41,7 @@ export default {
 }
 
 .links{
-  
+    
   display:flex;
   justify-content:space-between;
 }
@@ -59,7 +59,6 @@ export default {
   border-radius:5px;
   padding:10px;
   margin:10px 0;
-  margin-top:20px;
 }
 
 .ai-updates{
@@ -76,6 +75,14 @@ export default {
     max-width:90%;
     text-align:center;
   }
-}
+  .links {
+    flex-direction: column; /* Change from row to column */
+    align-items: center; /* Center align items */
+    padding: 12px;
+  }
+  
+  .links a {
+    margin: 5px 0; /* Add some vertical space between links */
+  }}
 
 </style>
