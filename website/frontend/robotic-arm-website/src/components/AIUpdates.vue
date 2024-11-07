@@ -41,7 +41,6 @@ export default {
 }
 
 .links{
-    
   display:flex;
   justify-content:space-between;
 }
@@ -76,13 +75,13 @@ export default {
     text-align:center;
   }
   .links {
-    flex-direction: column; /* Change from row to column */
-    align-items: center; /* Center align items */
+    flex-direction: column;
+    align-items: center; 
     padding: 12px;
   }
   
   .links a {
-    margin: 5px 0; /* Add some vertical space between links */
+    margin: 5px 0;
   }}
 
 </style>

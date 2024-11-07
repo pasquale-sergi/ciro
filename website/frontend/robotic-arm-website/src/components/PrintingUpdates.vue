@@ -41,7 +41,8 @@ export default {
   margin-left:3px;
 }
 .links{
-  
+  border:2px dashed #ddd;
+  padding:20px;
   display:flex;
   justify-content:space-between;
 }
@@ -68,18 +69,18 @@ export default {
     text-align:center;
     margin:0 auto;
   }
-}
   .update-content{
   margin-top:20px;
 }
   .links {
-    flex-direction: column; /* Change to vertical layout */
-    align-items: center; /* Center the items */
+    flex-direction: column;
+    align-items: center; 
     padding: 12px;
   }
 
   .links a {
-    margin: 5px 0; /* Add vertical spacing between links */
+    margin: 5px 0; 
   }
+}
 </style>
 

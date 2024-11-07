@@ -66,14 +66,15 @@ export default {
     text-align:center;
     margin:0 auto;
   }
-}
   .links {
-    flex-direction: column; /* Change to vertical layout */
-    align-items: center; /* Center the items */
+    border:2px dashed #ddd;
+    flex-direction: column;
+    align-items: center; 
     padding: 12px;
   }
 
   .links a {
     margin: 5px 0; /* Add vertical spacing between links */
   }
+}
 </style>
