@@ -159,7 +159,7 @@ video {
   .caption,
   .progress-page,
   .updates{
-    max-width:90%;
+    max-width:100%;
     text-align:center;
     margin:0 auto;
   }
@@ -177,6 +177,11 @@ video {
     border:2px dashed #ddd;
     padding:9px;
     margin-top:10px;
+  }
+
+  .code-img{
+    margin-top:10px;
+    margin-bottom:10px;
   }
 }
 </style>
