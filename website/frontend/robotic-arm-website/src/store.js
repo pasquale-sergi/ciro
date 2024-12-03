@@ -213,7 +213,84 @@ const store = createStore({
              The images are loaded correctly, and the labels look accurate. I can see a series of coordinates when a box is detected, and [-1, -1, -1, -1] when it’s not.
             <br><br>Regarding the model, I've outlined the architecture, and after some consideration, I think my choice will be a version similar to the Yolo v5n, also known as v5 nano.<br>I may further reduce the number of convolutional layers since the dataset size is manageable, and I also need to consider performance. I'm going to run the model on a Raspberry Pi, so the computational power is limited; a heavier architecture would not only risk overfitting but also use too much of the device's power.  </p>`
             , tag: "ai"
+        },
+        {
+            title: "Update 10: Sad but Happy",
+            content: ` <p>It’s been two weeks since the last update, and while there have been improvements, they didn’t occur where I initially expected.</p>
+    
+            <p>Starting with the object detection model, I spent the entire first week trying to enhance it. I started simple: a few convolutional layers, a good loss function, and some data augmentation—sometimes that’s all you need. The results, however, were terrible. I began modifying the code, adding more layers, paying closer attention to the bounding boxes and extracted features, refining the loss function, and so on. Despite these efforts, there was no improvement.</p>
+    
+            <p>After three days, I realized I might have jumped into the chess dataset too quickly. It was likely too complex, with too much information and too many features for an amateur like me to handle. I decided to backtrack and focus on my initial goal: detecting single objects.</p>
+    
+            <p>I love coffee, so my first subject was a coffee cup—three different cups from my kitchen. I took around 300 samples and decided to give it a shot. I built the model from scratch to keep it as simple as possible since the task was more akin to binary classification: determining if there was a cup in the image and, if so, identifying its position.</p>
+    
+            <p>The results were decent—the classification worked well, but the bounding boxes were way off. After some testing, I concluded that the majority of my pictures had the cup centered, so the model had learned to predict a centered bounding box pattern rather than recognizing the cup itself.</p>
+    
+            <p>To address this, I took more photos with the cups positioned to the sides of the frame and in different environments. Yet, the issue persisted. I added more layers, experimented with different loss functions—still nothing. Eventually, I decided to try a pre-trained ResNet-18 model with an architecture similar to mine, and it almost worked. The bounding box predictions were much better, though still a bit off for pictures where the cup was at the edge of the frame.</p>
+    
+            <p>This indicated two key things: first, my dataset still lacked sufficient variety, even with 500 samples. I’ll need more variance in the pictures. Second, I might need to incorporate additional features into the model.</p>
+    
+            <p>It may not sound like much progress, and in some ways, it wasn’t. The real highlight of the past two weeks, however, was in the 3D printing section, which I’ll discuss next.</p>
+
+            <p>These are some of the predictions I got with the latest model.</p>
+            
+            <div class="image-grid">
+                <img src="/cup_pred/1.jpg" alt="Prediction 1">
+                <img src="/cup_pred/2.jpg" alt="Prediction 2">
+                <img src="/cup_pred/3.jpg" alt="Prediction 3">
+                <img src="/cup_pred/4.jpg" alt="Prediction 4">
+                <img src="/cup_pred/5.jpg" alt="Prediction 5">
+                <img src="/cup_pred/6.jpg" alt="Prediction 6">
+                <img src="/cup_pred/7.jpg" alt="Prediction 7">
+                <img src="/cup_pred/8.jpg" alt="Prediction 8">
+            </div>
+
+            <p>As you can see, the predictions are almost there, but the bounding boxes are still quite off. This requires deeper analysis because I achieved good numbers for both the classification and the loss, so it might be due to incorrect normalization applied after the results, or it could be an issue with the model itself. My next goal is to figure this out. I’ve already tried different models and implementations, so I’m confident the overall architecture is correct; it just needs more precise adjustments.</p>
+
+
+                `,
+
+            tag: "ai"
+
+
+        },
+        {
+            title: "Update 11: Satisfaction",
+            content: `<p>Last week, my main goal was to find a solution for the physical model. The issue was that all the designs I found online had some kind of problem: they weren’t precise enough, weren’t scaled correctly, or weren’t compatible with my mechanical structure. After some research, I realized that to find the perfect solution, I would either need to modify my mechanical structure or adapt the model itself.</p>
+            
+            <p>I decided to focus on adapting the model. Then I thought, “If I need to learn the basics to modify an existing structure, why not go a step further and create the entire model myself?”</p>
+    
+            <p>And that’s exactly what I did. I spent four days taking a Fusion 360 course on Udemy, learning the basics. That was enough to allow me to create a decent model entirely from scratch. I absolutely loved the experience—being able to decide where to place each motor and ensuring that every hole is the exact size you need is incredibly satisfying.</p>
+    
+            <p>Of course, there are limitations when designing a model in just a week as a complete beginner, but I have to say, I’m pretty satisfied with my result compared to the ones I found online.<br><br> Below is a small video of the first draft I created over the past three days.</p>
+            
+            <div> <video controls> <source src="/draft_1-v3.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div>
+        
+            <p>The current model structure requires a total of six stepper motors. The only one not visible in the video is located at the base, and it allows the entire arm to rotate 360°.</p>                `,
+
+
+            tag: "printing"
+
+        },
+        {
+            title: "Update 12: Ciro start to understand",
+            content: `<p>Having had all that trouble with the object detection, I decided to stop coding it for now and take some time to learn more about the details. In the meantime, I decided to give the speech recognition model a try, which is the third and possibly last model.</p>
+                <p>To start, it’s a really simple one, just basic commands for now, such as “grab the object,” “put it down,” “in position,” and a couple more. It would be lovely to integrate a full speech model where we can exchange sentences, but I don’t want to set expectations too high. I’m following the KISS (Keep It Simple, Stupid) principle.</p>
+                <p>The requirements are pretty straightforward: a solid model with some convolutional layers, a good loss function, a sufficient amount of data, and a lot of love.<br>I started with the data, collecting 100 samples per command. Currently, I have just three commands: “in position,” “grab the apple,” and “put it down.”<br>The idea is to understand the sentence and extract useful information, such as “apple” in the “grab the apple” command.<br>Additionally, I want the arm to be aware of its current position, so a command like “put it down” can be executed smoothly. This means understanding the surrounding space and gently placing the object, not just letting it drop.</p>
+                <p>I used the same simple script I used for the wake word detection, took samples for about 40 minutes—3 seconds each, with a 16k sample rate and 1024 chunks.<br>I tried different architectures, adding and removing layers, and also experimented with a learning scheduler based on the training/test data. After just one day, I came up with a pretty decent model. 100 epochs were more than enough since the model only needs to recognize the pattern of one voice (mine), so the task is easier and lighter.</p>
+                <p>I’ll link the code for those interested in it, as well as some results.</p>
+                    
+                <div> <video controls> <source src="/speech-rec.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div>
+                <p>I also revisited my wake word detection model, which was initially just a simple draft, as mentioned in the first update. I rewrote it in PyTorch for consistency and made it more robust. After struggling with the object detection model, this one only took a couple of hours to refine.</p>
+                <p>I added about 100 more samples to balance the dataset. Now, I have 350 positive samples, with approximately 60% recorded using the Pi mic, and 350 negative samples.<br>The process is similar to the speech model: audio -> spectrogram -> training—nothing particularly new.<br>The model performed surprisingly well right from the start. As usual, I’ll share the code and a video demo of the model.</p>
+
+                <div> <video controls> <source src="/wwd.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div>
+                <p>The video is in Italian because the environment is as well, and Ciro is an Italian name too. This way, Italian words test the robustness of the model.</p>
+
+                `,
+            tag: "ai"
         }
+
         ],
 
     },

@@ -156,7 +156,23 @@ strong {
 p {
   margin: 5px 0; 
 }
+/* Dark mode styles */
+body.dark h2 {
+  color: #e0e0e0; /* Light color for h2 */
+}
 
+body.dark .caption{
+  color: #cccccc; /* Softer light color for general text */
+}
+
+body.dark .ai-features,
+body.dark .hardware-specs{
+  border-top: 1px dashed #ddd; /* Subtle border for dark mode */
+}
+
+body.dark .progress-link a {
+  color: #bb86fc; /* Softer, lighter link color in dark mode */
+}
 .hardware-specs {
   border-top: 1px dashed black;
   max-width: 50%;

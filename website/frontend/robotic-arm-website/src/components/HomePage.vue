@@ -72,6 +72,29 @@ h2 {
   text-align: center;
   margin: 20px auto;
 }
+
+body.dark .home-page {
+  background-color: #121212; 
+  color: #e0e0e0;
+}
+
+body.dark h2 {
+  color: #e0e0e0; 
+}
+
+body.dark .caption,
+body.dark .about-me {
+  color: #cccccc; 
+}
+
+body.dark .about-me {
+  border-top: 1px dashed #ddd;
+}
+
+body.dark .progress-link a {
+  color: #bb86fc; 
+}
+
 @media (max-width: 768px) {
   .caption,
   .about-me {
